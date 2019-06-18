@@ -1,0 +1,10 @@
+﻿.tabela {
+    width: 100%;
+    background-color: aqua;
+    color: red;
+}
+
+th ,td {
+    border-right-style: solid;
+    border-right-width: 1px;
+}   

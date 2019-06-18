@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/ContasRecebidas.css" />
+</head>
+<body>
+    <div>
+        <h1>Lista De Contas Recebidas</h1>
+    </div>
+    <a href="/ContasRecebidas/cadastrar">Cadastrar</a>
+    <form action="/ClintePessoaFisica/cadastrar" method="get">
+        <label for="Campo-de-pesquisa">Pesquisa</label>
+        <input type="text" id="campo-de-pequisa" name="pesquisa" />
+
+    </form>
+    <div>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Descricao</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < ViewBag.ContasRecebidas.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.ContasRecebidas[i].Id</td>
+                        <td>@ViewBag.ContasRecebidas[i].Nome</td>
+                        <td>@ViewBag.ContasRecebidas[i].Valor</td>
+                        <td>@ViewBag.ContasRecebidas[i].Tipo</td>
+                        <td>@ViewBag.ContasRecebidas[i].Descricao</td>
+                        <td>@ViewBag.ContasRecebidas[i].Status</td>
+                        <th>
+                            <a href="/ContasRecebidas/editar?id=@ViewBag.ContasRecebidas[i].Id">Editar</a>
+                        </th>
+                        <th>
+                            <a href="/ContasRecebidas/apagar?id=@ViewBag.ContasRecebidas[i].Id">Apagar</a>
+
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
