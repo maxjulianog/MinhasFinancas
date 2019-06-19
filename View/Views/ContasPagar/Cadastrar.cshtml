@@ -12,7 +12,7 @@
 </head>
 <body>
     <div>
-        <form action="/ContasRecebidas/store" method="post">
+        <form action="/ContasPagar/store" method="post">
 
             <label for="campo-nome">Nome</label>
             <input type="text" name="nome" id="campo-nome" />
@@ -32,7 +32,8 @@
             <label for="campo-status">status</label>
             <select name="status">
                 <option value="Pendente">Pendente</option>
-                <option value="Recebido">Recebido</option>
+                <option value="Atrasado">Atrasado</option>
+                <option value="Pago">Pago</option>
             </select>
             <button type="submit">Salvar</button>
         </form>

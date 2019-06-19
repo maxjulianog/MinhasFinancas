@@ -1,4 +1,6 @@
-﻿CREATE TABLE recebidas(
+﻿DROP TABLE recebidas;
+
+CREATE TABLE recebidas(
 	id INT PRIMARY KEY IDENTITY(1,1), 
 	nome VARCHAR(100),
 	valor DECIMAL(16,2),

@@ -8,15 +8,15 @@ using System.Web.Mvc;
 
 namespace View.Controllers
 {
-    public class ContasRecebidasController : Controller
+    public class ContasPagarController : Controller
     {
         // GET: ClintePessoaFisica
         public ActionResult Index()
         {
-            ContasRecebidasRepository repositorio = new ContasRecebidasRepository();
-            ViewBag.ContasRecebidas = repositorio.ObterTodos("");
+            ContasPagarRepository repositorio = new ContasPagarRepository();
+            ViewBag.ContasPagar = repositorio.ObterTodos("");
 
-            return View();  
+            return View();
         }
 
         public ActionResult Cadastrar()
@@ -26,28 +26,28 @@ namespace View.Controllers
 
         public ActionResult Store(string nome, decimal valor, string tipo, string descricao, string status)
         {
-            ContaRecebida conta = new ContaRecebida();
+            ContaPagar conta = new ContaPagar();
             conta.Nome = nome;
             conta.Valor = valor;
             conta.Tipo = tipo;
             conta.Descricao = descricao;
             conta.Status = status;
 
-            ContasRecebidasRepository repositorio = new ContasRecebidasRepository();
+            ContasPagarRepository repositorio = new ContasPagarRepository();
             repositorio.Insert(conta);
             return RedirectToAction("Index");
         }
-        
+
         public ActionResult Editar(int id)
         {
-            ContasRecebidasRepository repositorio = new ContasRecebidasRepository();
-            ViewBag.ContaRecebidaEditar = repositorio.ObterPeloId(id);
+            ContasPagarRepository repositorio = new ContasPagarRepository();
+            ViewBag.ContasPagarEditar = repositorio.ObterPeloId(id);
             return View();
         }
 
         public ActionResult Update(string nome, decimal valor, string tipo, string descricao, string status, int id)
         {
-            ContaRecebida conta = new ContaRecebida();
+            ContaPagar conta = new ContaPagar();
             conta.Nome = nome;
             conta.Valor = valor;
             conta.Tipo = tipo;
@@ -55,17 +55,16 @@ namespace View.Controllers
             conta.Status = status;
             conta.Id = id;
 
-            ContasRecebidasRepository repositorio = new ContasRecebidasRepository();
+            ContasPagarRepository repositorio = new ContasPagarRepository();
             repositorio.Atualizar(conta);
             return RedirectToAction("Index");
         }
 
         public ActionResult Apagar(int id)
         {
-            ContasRecebidasRepository repositorio = new ContasRecebidasRepository();
+            ContasPagarRepository repositorio = new ContasPagarRepository();
             repositorio.Apagar(id);
             return RedirectToAction("Index");
         }
-       
     }
 }

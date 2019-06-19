@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContasPagarController.cs" />
     <Compile Include="Controllers\ContasRecebidasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -106,6 +107,12 @@
     <Content Include="Views\ContasRecebidas\Index.cshtml" />
     <Content Include="Views\ContasRecebidas\Cadastrar.cshtml" />
     <Content Include="Views\ContasRecebidas\Editar.cshtml" />
+    <Content Include="Views\ContasPagar\Index.cshtml" />
+    <Content Include="Views\ContasPagar\Cadastrar.cshtml" />
+    <Content Include="Views\ContasPagar\Editar.cshtml" />
+    <Content Include="Views\PessoaJuridica\Index.cshtml" />
+    <Content Include="Views\PessoaJuridica\Editar.cshtml" />
+    <Content Include="Views\PessoaJuridica\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -13,9 +13,9 @@
 </head>
 <body>
     <div>
-        <h1>Lista De Contas Recebidas</h1>
+        <h1>Lista De Contas a Pagar</h1>
     </div>
-    <a href="/ContasRecebidas/cadastrar">Cadastrar</a>
+    <a href="/ContasPagar/cadastrar">Cadastrar</a>
     <form action="/ClintePessoaFisica/cadastrar" method="get">
         <label for="Campo-de-pesquisa">Pesquisa</label>
         <input type="text" id="campo-de-pequisa" name="pesquisa" />
@@ -35,20 +35,18 @@
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < ViewBag.ContasRecebidas.Count; i++)
+                @for (int i = 0; i < ViewBag.ContasPagar.Count; i++)
                 {
                     <tr>
-                        <td>@ViewBag.ContasRecebidas[i].Id</td>
-                        <td>@ViewBag.ContasRecebidas[i].Nome</td>
-                        <td>@ViewBag.ContasRecebidas[i].Valor</td>
-                        <td>@ViewBag.ContasRecebidas[i].Tipo</td>
-                        <td>@ViewBag.ContasRecebidas[i].Descricao</td>
-                        <td>@ViewBag.ContasRecebidas[i].Status</td>
+                        <td>@ViewBag.ContasPagar[i].Id</td>
+                        <td>@ViewBag.ContasPagar[i].Nome</td>
+                        <td>@ViewBag.ContasPagar[i].Valor</td>
+                        <td>@ViewBag.ContasPagar[i].Tipo</td>
+                        <td>@ViewBag.ContasPagar[i].Descricao</td>
+                        <td>@ViewBag.ContasPagar[i].Status</td>
                         <th>
-                            <a href="/ContasRecebidas/editar?id=@ViewBag.ContasRecebidas[i].Id">Editar</a>
-                        </th>
-                        <th>
-                            <a href="/ContasRecebidas/Apagar?id=@ViewBag.ContasRecebidas[i].Id">Apagar</a>
+                            <a href="/ContasPagar/editar?id=@ViewBag.ContasPagar[i].Id">Editar</a>
+                            <a href="/ContasPagar/apagar?id=@ViewBag.ContasPagar[i].Id">Apagar</a>
 
                         </th>
                     </tr>

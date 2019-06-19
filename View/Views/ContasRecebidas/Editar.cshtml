@@ -12,15 +12,15 @@
 </head>
 <body>
     <div>
-        <form action="/ContasRecebidas/update">
+        <form action="/ContasRecebidas/update" method="post">
             <label for="campo-nome">Nome</label>
-            <input type="text" name="nome" id="campo-nome" />
+            <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaRecebidaEditar.Nome"/>
 
             <label for="campo-valor">Valor</label>
             <input type="number" name="valor" id="campo-valor" />
 
             <label for="campo-tipo">Tipo</label>
-            <select>
+            <select name="tipo">
             <option value="Crediario">Crediario</option>
             <option value="Bancario">Bancario</option>
             </select>
@@ -29,10 +29,13 @@
             <input type="text" name="descricao" id="campo-descricao" />
 
             <label for="campo-status">status</label>
-            <select>
+            <select name="status">
             <option value="Pendente">Pendente</option>
             <option value="Recebido">Recebido</option>
             </select>
+
+            <input type="hidden" value="@ViewBag.ContaRecebidaEditar.Id" name="id"/>
+
             <button type="submit">Salvar</button>
 
         </form>

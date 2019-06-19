@@ -8,14 +8,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Cadastrar</title>
+    <title>Editar</title>
 </head>
 <body>
     <div>
-        <form action="/ContasRecebidas/store" method="post">
-
+        <form action="/ContasPagar/update" method="post">
             <label for="campo-nome">Nome</label>
-            <input type="text" name="nome" id="campo-nome" />
+            <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContasPagarEditar.Nome" />
 
             <label for="campo-valor">Valor</label>
             <input type="number" name="valor" id="campo-valor" />
@@ -32,9 +31,14 @@
             <label for="campo-status">status</label>
             <select name="status">
                 <option value="Pendente">Pendente</option>
-                <option value="Recebido">Recebido</option>
+                <option value="Atrasado">Atrasado</option>
+                <option value="Pago">Pago</option>
             </select>
+
+            <input type="hidden" value="@ViewBag.ContasPagarEditar.Id" name="id" />
+
             <button type="submit">Salvar</button>
+
         </form>
     </div>
 </body>

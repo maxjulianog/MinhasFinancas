@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="ContasPagarRepository.cs" />
     <Compile Include="ContasRecebidasRepository.cs" />
+    <Compile Include="IContasPagarRepository.cs" />
     <Compile Include="IContasRecebidasRepository.cs" />
+    <Compile Include="IPessoaJuridica.cs" />
+    <Compile Include="PessoaJuridica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
